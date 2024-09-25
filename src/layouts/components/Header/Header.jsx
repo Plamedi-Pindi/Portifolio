@@ -85,7 +85,7 @@ function Header() {
             heroState === "hero1"
               ? ` block w-full md:w-96  `
               : "  hidden md:block md:w-36"
-          } bg-zinc-300  rounded-xl drop-shadow duration-500  bg-[url("./4.png")] bg-center bg-no-repeat bg-bottom  relative`}
+          } bg-zinc-300  rounded-xl drop-shadow duration-500  bg-[url("https://i.imgur.com/qg4qrFt.png")] bg-center bg-no-repeat bg-bottom  relative`}
           onMouseOver={ handleHeroOneMouseOver }
         >
           <div className="w-full h-full bg-gradient-to-t from-black/60 from-10% rounded-xl flex justify-between items-end pr-6 pl-6 pb-12 text-white">
@@ -113,7 +113,7 @@ function Header() {
             heroState === "hero2"
               ? `block w-full md:w-96  `
               : "hidden md:block md:w-36"
-          } bg-pink-200 rounded-xl drop-shadow duration-500  bg-[url("./1.png")] bg-center bg-no-repeat relative `}
+          } bg-pink-200 rounded-xl drop-shadow duration-500  bg-[url("https://i.imgur.com/ndkIpcE.png")] bg-center bg-no-repeat relative `}
           onMouseOver={handleHeroTwoMouseOver}
         >
           <div className="w-full h-full bg-gradient-to-t from-black/60 from-10% rounded-xl flex justify-between items-end pr-6 pl-6 pb-12 text-white ">
@@ -145,7 +145,7 @@ function Header() {
             heroState === "hero3"
               ?  `block w-full lg:w-96  `
               : " hidden md:block lg:w-36"
-          } bg-slate-200 rounded-xl drop-shadow duration-500  bg-[url("./3.png")] bg-center bg-no-repeat bg-bottom relative `}
+          } bg-slate-200 rounded-xl drop-shadow duration-500  bg-[url("https://i.imgur.com/vTJJ6tu.png")] bg-center bg-no-repeat bg-bottom relative `}
           onMouseOver={handleHeroThreeMouseOver}
         >
           <div className="w-full h-full bg-gradient-to-t from-black/60 from-10% rounded-xl flex justify-between items-end pr-6 pl-6 pb-12 text-white">
