@@ -54,7 +54,7 @@ export default function Home() {
       {/* ABOUT SECTION */}
       <section className="mt-10 mb-10  md:mt-40  w-container mx-auto md:flex items-center md:h-28 ">
         <div className="md:bg-green-400 md:flex md:justify-center md:items-center md:w-32 md:h-full cursor-pointer mb-4">
-          <h2 className="yeseva-one-regular text-center text-xl md:text-3xl  md:mb-0">
+          <h2 className="font-bold text-center text-xl md:text-3xl  md:mb-0">
             Sobre mim.
           </h2>
         </div>
@@ -165,14 +165,25 @@ export default function Home() {
         <div className="md:flex md:w-container mx-auto md:items-center">
           {/* Media social */}
           <div className="w-container md:basis-1/3 mx-auto flex flex-wrap justify-around mb-6 md:mb-0">
-            <MediaCard icon={linkedin} name={`Linkedin`} margin={`mb-6`} />
-            <MediaCard icon={github} name={`Github`} margin={`mb-6`} />
+            <MediaCard
+              icon={linkedin}
+              name={`Linkedin`}
+              margin={`mb-6`}
+              url={`https://www.linkedin.com/in/plamedi-pindi`}
+            />
+            <MediaCard
+              icon={github}
+              name={`Github`}
+              margin={`mb-6`}
+              url={`https://github.com/Plamedi-Pindi`}
+            />
             <MediaCard icon={instagram} name={`Instagram`} margin={`mb-6`} />
             <MediaCard
               icon={phone}
               name={`Phone`}
               opcional={`(+244) 926477947`}
               margin={`mb-6`}
+              url={`tel:+244926477947`}
             />
           </div>
 
@@ -219,7 +230,6 @@ export default function Home() {
       <footer className="h-16 w-full bg-white">
         <div className="w-container mx-auto flex items-center h-full">
           <Logo />
-
         </div>
       </footer>
     </>

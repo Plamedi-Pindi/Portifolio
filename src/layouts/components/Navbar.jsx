@@ -36,21 +36,21 @@ function Navbar({ display, background }) {
         <Logo />
 
         {/* Nav list */}
-        <ul className="md:flex imd:tems-center text-sm font-medium  space-x-8 -ml-64 hidden md:block">
-          <li>
-            <a href="#">Start</a>
+        <ul className="md:flex md:items-center text-sm font-medium h-full  space-x-8 -ml-64 hidden md:block">
+          <li className="">
+            <a href="#" className="hover:border-b-2 duration-100 border-green-400 hover:text-green-500 ">Start</a>
           </li>
-          <li>
-            <a href="#">About</a>
+          <li className="">
+            <a href="#" className="hover:border-b-2 duration-100 border-green-400 hover:text-green-500 ">About</a>
           </li>
-          <li>
-            <a href="#">Skills</a>
+          <li className="">
+            <a href="#" className="hover:border-b-2 duration-100 border-green-400 hover:text-green-500 ">Skills</a>
           </li>
-          <li>
-            <a href="#">Projects</a>
+          <li className="">
+            <a href="#" className="hover:border-b-2 duration-100 border-green-400 hover:text-green-500 ">Projects</a>
           </li>
-          <li>
-            <a href="#">Media</a>
+          <li className="">
+            <a href="#" className="hover:border-b-2 duration-100 border-green-400 hover:text-green-500 ">Media</a>
           </li>
         </ul>
 

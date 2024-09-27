@@ -1,6 +1,5 @@
 // Hooks
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 
 //Framer Motion
 import { motion } from "framer-motion";
@@ -11,12 +10,28 @@ import "../../../style/Header/Header.css";
 // Components
 import Button from "../../../components/PortButton/Button";
 
+export default function Header() {
+  // states
+  const [heroState, setHeroState] = useState("hero1"); // set an hero to shrink our stretch: 'hero1', 'hero2', 'hero2'
+  const [index, setIndex] = useState(false);
 
+  //
+  let isHero1 = heroState === "hero1";
+  let isHero2 = heroState === "hero2";
+  let isHero3 = heroState === "hero3";
 
-function Header() {
-  const [heroState, setHeroState] = useState("hero1");
-  
-  
+  const handleHero1Click = () => {
+    setHeroState("hero2");
+  };
+
+  const handleHero2Click = () => {
+    setHeroState("hero3");
+  };
+
+  const handleHero3Click = () => {
+    setHeroState("hero1");
+  };
+
   // Event handler to change Hero state to "hero1" when mouse is over the element
   const handleHeroOneMouseOver = () => {
     setHeroState("hero1");
@@ -24,12 +39,12 @@ function Header() {
 
   // Event handler to change Hero state to "hero2" when mouse is over the element
   const handleHeroTwoMouseOver = () => {
-    setHeroState("hero2"); 
+    setHeroState("hero2");
   };
 
   // Event handler to change Hero state to "hero3" when mouse is over the element
   const handleHeroThreeMouseOver = () => {
-    setHeroState("hero3");          
+    setHeroState("hero3");
   };
 
   return (
@@ -37,11 +52,13 @@ function Header() {
       {/*  */}
       <div className=" md:h-60vh pt-4 md:pt-10 text-center md:text-start ">
         <p className="text-lg mb-2 font-medium montserrat">Olá, eu sou</p>
-        <h1 className="text-4xl font-bold mb-2 yeseva-one-regular text-green-800 " >
+        <h1 className="text-4xl font-bold mb-2 yeseva-one-regular text-green-800 ">
           {" "}
           Plamedi Pindi
         </h1>
-        <p className="text-base font-medium mb-6 montserrat ">Desenvolvedor Front-end</p>
+        <p className="text-base font-medium mb-6 montserrat ">
+          Desenvolvedor Front-end
+        </p>
 
         <Button
           background={`bg-black`}
@@ -78,15 +95,79 @@ function Header() {
         </div>
       </div>
 
-      <div className="w-full md:w-auto md:pl-2 md:pr-2 h-40vh md:h-60vh flex md:space-x-6 ">
+      <div className="w-full md:w-auto md:pl-2 md:pr-2 h-40vh md:h-60vh flex md:space-x-6   overflow-hidden">
+        {/* ================== MOBILE HERO START ================== */}
+
+        {/* HERO IMG 1 */}
+        <div
+          className={`hero1-bg block w-full md:w-96  bg-zinc-300  rounded-xl drop-shadow duration-700  bg-[url("https://i.imgur.com/qg4qrFt.png")] bg-center bg-no-repeat bg-bottom ${
+            isHero1 ? "block " : `w-0 opacity-0 `
+          }  relative md:hidden`}
+          onClick={handleHero1Click}
+        >
+          <div className="w-full h-full bg-gradient-to-t from-black/60 from-10% rounded-xl flex justify-between items-end pr-6 pl-6 pb-12 text-white">
+            <div className="">
+              <p className=" ">Writting</p>
+              <p>Course</p>
+            </div>
+
+            <div>
+              <p className="text-xl">100</p>
+              <p className="text-xs text-center">tops</p>
+            </div>
+          </div>
+        </div>
+
+        {/* HERO IMG 2 */}
+        <div
+          className={`hero2-bg  block w-full md:w-96 bg-pink-200 rounded-xl drop-shadow duration-700  bg-[url("https://i.imgur.com/ndkIpcE.png")] bg-center bg-no-repeat relative ${
+            isHero2 ? "block" : `w-0 opacity-0  `
+          } md:hidden`}
+          onClick={handleHero2Click}
+        >
+          <div className="w-full h-full bg-gradient-to-t from-black/60 from-10% rounded-xl flex justify-between items-end pr-6 pl-6 pb-12 text-white ">
+            <div>
+              <p className=" ">Writting</p>
+              <p>Course</p>
+            </div>
+
+            <div>
+              <p className="text-xl">100</p>
+              <p className="text-xs text-center">tops</p>
+            </div>
+          </div>
+        </div>
+
+        {/* HERO IMG 3 */}
+        <div
+          className={` hero3-bg block w-full lg:w-96 bg-slate-200 rounded-xl drop-shadow duration-700  bg-[url("https://i.imgur.com/vTJJ6tu.png")] bg-center bg-no-repeat bg-bottom relative ${
+            isHero3 ? "block" : `w-0 opacity-0  `
+          } md:hidden`}
+          onClick={handleHero3Click}
+        >
+          <div className="w-full h-full bg-gradient-to-t from-black/60 from-10% rounded-xl flex justify-between items-end pr-6 pl-6 pb-12 text-white">
+            <div>
+              <p className=" ">Writting</p>
+              <p>Course</p>
+            </div>
+
+            <div>
+              <p className="text-xl">100</p>
+              <p className="text-xs text-center">tops</p>
+            </div>
+          </div>
+        </div>
+
+        {/* ================== MOBILE HERO END ================== */}
+
         {/* HERO IMG 1 */}
         <div
           className={`hero1-bg ${
             heroState === "hero1"
               ? ` block w-full md:w-96  `
               : "  hidden md:block md:w-36"
-          } bg-zinc-300  rounded-xl drop-shadow duration-500  bg-[url("https://i.imgur.com/qg4qrFt.png")] bg-center bg-no-repeat bg-bottom  relative`}
-          onMouseOver={ handleHeroOneMouseOver }
+          } bg-zinc-300  rounded-xl drop-shadow duration-500  bg-[url("https://i.imgur.com/qg4qrFt.png")] bg-center bg-no-repeat bg-bottom  relative hidden md:block`}
+          onMouseOver={handleHeroOneMouseOver}
         >
           <div className="w-full h-full bg-gradient-to-t from-black/60 from-10% rounded-xl flex justify-between items-end pr-6 pl-6 pb-12 text-white">
             {heroState === "hero1" ? (
@@ -113,7 +194,7 @@ function Header() {
             heroState === "hero2"
               ? `block w-full md:w-96  `
               : "hidden md:block md:w-36"
-          } bg-pink-200 rounded-xl drop-shadow duration-500  bg-[url("https://i.imgur.com/ndkIpcE.png")] bg-center bg-no-repeat relative `}
+          } bg-pink-200 rounded-xl drop-shadow duration-500  bg-[url("https://i.imgur.com/ndkIpcE.png")] bg-center bg-no-repeat relative hidden md:block`}
           onMouseOver={handleHeroTwoMouseOver}
         >
           <div className="w-full h-full bg-gradient-to-t from-black/60 from-10% rounded-xl flex justify-between items-end pr-6 pl-6 pb-12 text-white ">
@@ -143,9 +224,9 @@ function Header() {
         <div
           className={` hero3-bg ${
             heroState === "hero3"
-              ?  `block w-full lg:w-96  `
+              ? `block w-full lg:w-96  `
               : " hidden md:block lg:w-36"
-          } bg-slate-200 rounded-xl drop-shadow duration-500  bg-[url("https://i.imgur.com/vTJJ6tu.png")] bg-center bg-no-repeat bg-bottom relative `}
+          } bg-slate-200 rounded-xl drop-shadow duration-500  bg-[url("https://i.imgur.com/vTJJ6tu.png")] bg-center bg-no-repeat bg-bottom relative hidden md:block`}
           onMouseOver={handleHeroThreeMouseOver}
         >
           <div className="w-full h-full bg-gradient-to-t from-black/60 from-10% rounded-xl flex justify-between items-end pr-6 pl-6 pb-12 text-white">
@@ -175,4 +256,24 @@ function Header() {
   );
 }
 
-export default Header;
+// Hero object for mobile display ==================
+const hero = [
+  {
+    id: 1,
+    url: "https://i.imgur.com/qg4qrFt.png",
+    description1: "",
+    description2: "",
+  },
+  {
+    id: 2,
+    url: "https://i.imgur.com/ndkIpcE.png",
+    description1: "",
+    description2: "",
+  },
+  {
+    id: 3,
+    url: "https://i.imgur.com/vTJJ6tu.png",
+    description1: "",
+    description2: "",
+  },
+];
