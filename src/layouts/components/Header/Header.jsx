@@ -10,10 +10,9 @@ import "../../../style/Header/Header.css";
 // Components
 import Button from "../../../components/PortButton/Button";
 
-export default function Header() {
+export default function Header({handleSoundClick}) {
   // states
   const [heroState, setHeroState] = useState("hero1"); // set an hero to shrink our stretch: 'hero1', 'hero2', 'hero2'
-  const [index, setIndex] = useState(false);
 
   //
   let isHero1 = heroState === "hero1";
@@ -78,6 +77,7 @@ export default function Header() {
           margin={`mx-auto  md:mx-0  `}
           border={`border-2 border-black`}
           hover={`hover:bg-orange-300 hover:text-balck hover:border-white hover:scale-95 duration-300 hover:text-black  hover:font-bold`}
+          onclick={handleSoundClick}
         >
           Download CV
         </Button>
@@ -95,7 +95,7 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="w-full md:w-auto md:pl-2 md:pr-2 h-40vh md:h-60vh flex md:space-x-6 bg-red-400  overflow-hidden">
+      <div className="w-full md:w-auto md:pl-2 md:pr-2 h-40vh md:h-60vh flex md:space-x-6  overflow-hidden">
         {/* ================== MOBILE HERO START ================== */}
 
         {/* HERO IMG 1 */}

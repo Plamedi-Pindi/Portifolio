@@ -5,6 +5,7 @@ import Subtitle from "../../components/Subtitle/Subtitle";
 import SkillCard from "../../components/SkillCard/SkillCard";
 import ProjectCard from "../../components/ProjectCards/ProjectCard";
 import MediaCard from "../../components/MediaCard/MediaCard";
+import ContactForm from "../../components/Email/ContactForm";
 
 // Assets
 import html from "../../assets/img/Skills/html.png";
@@ -28,7 +29,7 @@ import Logo from "../../components/Logo/Logo";
 // Assets for svg
 import github from "../../assets/svg/github.svg";
 import linkedin from "../../assets/svg/linkedin.svg";
-import instagram from "../../assets/svg/instagram.svg";
+import whatsapp from "../../assets/svg/whatsapp.svg";
 import phone from "../../assets/svg/phone.svg";
 
 // Assets for projects
@@ -38,7 +39,11 @@ import standout from "../../assets/img/projects/standout.jpg";
 // Icons
 import { BsArrowRight } from "react-icons/bs";
 
-// Components
+// Howler Audio library
+import { Howl } from "howler";
+
+// Assets - Audio
+import clab from "../../assets/sound/clab/applause-crowd-242638.mp3";
 
 // Ring
 import a6 from "../../assets/sound/note/a6-102820.mp3";
@@ -46,10 +51,24 @@ import c6 from "../../assets/sound/note/c6-102822.mp3";
 import e6 from "../../assets/sound/note/e6-82016.mp3";
 
 export default function Home() {
+  // Event handler for Download button sound
+  const handleSoundClick = () => {
+    // Howler object
+    const ring = new Howl({
+      src: [clab],
+      html5: true,
+    });
+
+    ring.play(); // Start play de sound
+  };
+
   return (
     <>
-      <Navbar background={`bg-white md:bg-default`} />
-      <Header />
+      <Navbar
+        background={`bg-white md:bg-default`}
+        handleSoundClick={handleSoundClick}
+      />
+      <Header handleSoundClick={handleSoundClick} />
 
       {/* ABOUT SECTION */}
       <section className="mt-10 mb-10  md:mt-40  w-container mx-auto md:flex items-center md:h-28 ">
@@ -158,72 +177,58 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contacts */}
+      {/* CONTACTS START ============== */}
       <section className="mb-10">
         <Subtitle title="Medias " margin={`mb-10`} />
 
         <div className="md:flex md:w-container mx-auto md:items-center">
           {/* Media social */}
           <div className="w-container md:basis-1/3 mx-auto flex flex-wrap justify-around mb-6 md:mb-0">
+            {/* Linkedin */}
             <MediaCard
               icon={linkedin}
               name={`Linkedin`}
               margin={`mb-6`}
               url={`https://www.linkedin.com/in/plamedi-pindi`}
+              width={`w-8`}
             />
+
+            {/* Github */}
             <MediaCard
               icon={github}
               name={`Github`}
               margin={`mb-6`}
               url={`https://github.com/Plamedi-Pindi`}
+              width={`w-8`}
             />
-            <MediaCard icon={instagram} name={`Instagram`} margin={`mb-6`} />
+
+            {/* Whatsapp */}
+            <MediaCard
+              icon={whatsapp}
+              name={`Whatsapp`}
+              margin={`mb-6`}
+              url={`https://wa.me/244926477947`}
+              width={`w-11`}
+              target={`_blank`}
+            />
+
+            {/* Phone number */}
             <MediaCard
               icon={phone}
               name={`Phone`}
               opcional={`(+244) 926477947`}
               margin={`mb-6`}
               url={`tel:+244926477947`}
+              width={`w-8`}
             />
           </div>
 
-          {/* Get in touch */}
-          <div className="bg-test w-container md:basis-2/5 mx-auto h-26rm rounded-md p-3 text-sm ">
-            <h2 className="text-center text-lg mb-6 mt-4 montserrat font-bold">
-              Entre em contato
-            </h2>
-
-            <div>
-              <div className="w-full md:w-11/12 md:mx-auto ">
-                <label className="font-medium block font-medium">Nome</label>
-                <input
-                  type="text"
-                  placeholder="Nome"
-                  className="w-full p-1 pl-2 outline-none mb-6 border-b-2 border-black bg-transparent mt-1 "
-                />
-              </div>
-
-              <div className="w-full md:w-11/12 md:mx-auto ">
-                <label className="font-medium block font-medium">Email</label>
-                <input
-                  type="email"
-                  placeholder="Nome"
-                  className="w-full p-1 pl-2 outline-none mb-6 border-b-2 border-black bg-transparent mt-1 "
-                />
-              </div>
-
-              <textarea
-                placeholder="Como posso ajudar?"
-                className="w-full md:w-11/12 md:mx-auto block max-h-32 h-32 p-2 mt-4 mb-4 border-b-2 border-black bg-white/50 outline-none"
-              ></textarea>
-
-              <button className="bg-black text-white w-full md:w-11/12 md:mx-auto block p-2 mt-4 md:mt-9 rounded-full hover:scale-95 duration-500">
-                Enviar
-              </button>
-            </div>
-          </div>
+          {/* Get in touch start */}
+          <ContactForm />
+          {/* Get in touch start End*/}
         </div>
       </section>
+      {/* CONTACTS END ============== */}
 
       {/* FOOTER */}
 

@@ -10,23 +10,11 @@ import DownloadButton from "../../components/PortButton/DownloadButton";
 // Icone
 import { BsList } from "react-icons/bs";
 
-// Howler Audio library
-import { Howl } from "howler";
 
-// Assets - Audio
-import clab from "../../assets/sound/clab/applause-crowd-242638.mp3";
 
-function Navbar({ display, background }) {
+function Navbar({ display, background, handleSoundClick }) {
   // Event handle to play a sound while a download button is clicked
-  const handleSoundClick = () => {
-    // Howler object
-    const ring = new Howl({
-      src: [clab],
-      html5: true,
-    });
-
-    ring.play(); // Start play de sound
-  };
+  
 
   // Return
   return (
