@@ -95,14 +95,14 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="w-full md:w-auto md:pl-2 md:pr-2 h-40vh md:h-60vh flex md:space-x-6   overflow-hidden">
+      <div className="w-full md:w-auto md:pl-2 md:pr-2 h-40vh md:h-60vh flex md:space-x-6 bg-red-400  overflow-hidden">
         {/* ================== MOBILE HERO START ================== */}
 
         {/* HERO IMG 1 */}
         <div
-          className={`hero1-bg block w-full md:w-96  bg-zinc-300  rounded-xl drop-shadow duration-700  bg-[url("https://i.imgur.com/qg4qrFt.png")] bg-center bg-no-repeat bg-bottom ${
-            isHero1 ? "block " : `w-0 opacity-0 `
-          }  relative md:hidden`}
+          className={`hero1-bg  bg-zinc-300  rounded-xl drop-shadow duration-700  bg-[url("https://i.imgur.com/qg4qrFt.png")] bg-center bg-no-repeat bg-bottom ${
+            isHero1 ? "block min-w-full" : ` min-w-0 opacity-0`
+          }  relative md:hidden `}
           onClick={handleHero1Click}
         >
           <div className="w-full h-full bg-gradient-to-t from-black/60 from-10% rounded-xl flex justify-between items-end pr-6 pl-6 pb-12 text-white">
@@ -120,8 +120,8 @@ export default function Header() {
 
         {/* HERO IMG 2 */}
         <div
-          className={`hero2-bg  block w-full md:w-96 bg-pink-200 rounded-xl drop-shadow duration-700  bg-[url("https://i.imgur.com/ndkIpcE.png")] bg-center bg-no-repeat relative ${
-            isHero2 ? "block" : `w-0 opacity-0  `
+          className={`hero2-bg  block md:w-96 bg-pink-200 rounded-xl drop-shadow duration-700  bg-[url("https://i.imgur.com/ndkIpcE.png")] bg-center bg-no-repeat relative ${
+            isHero2 ? "block min-w-full" : `min-w-0 opacity-0  `
           } md:hidden`}
           onClick={handleHero2Click}
         >
@@ -140,8 +140,8 @@ export default function Header() {
 
         {/* HERO IMG 3 */}
         <div
-          className={` hero3-bg block w-full lg:w-96 bg-slate-200 rounded-xl drop-shadow duration-700  bg-[url("https://i.imgur.com/vTJJ6tu.png")] bg-center bg-no-repeat bg-bottom relative ${
-            isHero3 ? "block" : `w-0 opacity-0  `
+          className={` hero3-bg block md:w-96 bg-slate-200 rounded-xl drop-shadow duration-700  bg-[url("https://i.imgur.com/vTJJ6tu.png")] bg-center bg-no-repeat bg-bottom relative ${
+            isHero3 ? "block min-w-full" : `min-w-0 opacity-0  `
           } md:hidden`}
           onClick={handleHero3Click}
         >
