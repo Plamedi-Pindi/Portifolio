@@ -50,6 +50,9 @@ import a6 from "../../assets/sound/note/a6-102820.mp3";
 import c6 from "../../assets/sound/note/c6-102822.mp3";
 import e6 from "../../assets/sound/note/e6-82016.mp3";
 
+
+import MotionTest from "../../components/MotionTest/MotionTest";
+
 export default function Home() {
   // Event handler for Download button sound
   const handleSoundClick = () => {
@@ -231,6 +234,8 @@ export default function Home() {
       {/* CONTACTS END ============== */}
 
       {/* FOOTER */}
+
+      {/* <MotionTest /> */}
 
       <footer className="h-16 w-full bg-white">
         <div className="w-container mx-auto flex items-center h-full">

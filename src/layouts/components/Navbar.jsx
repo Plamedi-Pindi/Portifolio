@@ -10,6 +10,11 @@ import DownloadButton from "../../components/PortButton/DownloadButton";
 // Icone
 import { BsList } from "react-icons/bs";
 
+// Framer Motion
+import {motion} from "framer-motion";
+
+
+
 
 
 function Navbar({ display, background, handleSoundClick }) {
@@ -47,6 +52,7 @@ function Navbar({ display, background, handleSoundClick }) {
 
         {/* Mobile Menu List */}
         <BsList className="md:hidden text-2xl" />
+
       </div>
     </nav>
   );
