@@ -47,7 +47,7 @@ export default function Header({handleSoundClick}) {
   };
 
   return (
-    <header className="   w-container flex flex-col-reverse md:flex-row md:justify-between items-center mx-auto mt-2 md:mt-10 relative">
+    <header className="  w-container flex flex-col-reverse md:flex-row md:justify-between items-center mx-auto mt-2 md:mt-10 relative">
       {/*  */}
       <div className=" md:h-60vh pt-4 md:pt-10 text-center md:text-start ">
         <p className="text-lg mb-2 font-medium montserrat">Olá, eu sou</p>

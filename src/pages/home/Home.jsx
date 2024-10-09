@@ -50,7 +50,7 @@ import a6 from "../../assets/sound/note/a6-102820.mp3";
 import c6 from "../../assets/sound/note/c6-102822.mp3";
 import e6 from "../../assets/sound/note/e6-82016.mp3";
 
-
+// Motion
 import MotionTest from "../../components/MotionTest/MotionTest";
 
 export default function Home() {
@@ -67,10 +67,13 @@ export default function Home() {
 
   return (
     <>
+    {/* NAVBAR */}
       <Navbar
         background={`bg-white md:bg-default`}
         handleSoundClick={handleSoundClick}
       />
+
+      {/* HEADER */}
       <Header handleSoundClick={handleSoundClick} />
 
       {/* ABOUT SECTION */}
@@ -146,7 +149,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center  justify-between md:flex-row flex-wrap  ">
+        <div className="flex flex-col items-center  justify-between md:flex-row flex-wrap ">
           <ProjectCard
             img={spotify}
             margin={`mb-5 md:mb-10`}
@@ -181,12 +184,12 @@ export default function Home() {
       </section>
 
       {/* CONTACTS START ============== */}
-      <section className="mb-10">
+      <section className="mb-10 ">
         <Subtitle title="Medias " margin={`mb-10`} />
 
-        <div className="md:flex md:w-container mx-auto md:items-center">
+        <div className="md:flex   md:w-container mx-auto md:items-center">
           {/* Media social */}
-          <div className="w-container md:basis-1/3 mx-auto flex flex-wrap justify-around mb-6 md:mb-0">
+          <div className="  w-container md:basis-1/3 mx-auto flex flex-wrap justify-around mb-6 md:mb-0">
             {/* Linkedin */}
             <MediaCard
               icon={linkedin}

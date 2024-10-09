@@ -9,21 +9,21 @@ import tailwindcss from "../../assets/svg/tailwindcss.svg";
 // Component
 import ProjectButton from "../PortButton/ProjectButton";
 
-
+// Main function
 function   ProjectCard({ img, title, margin }) {
   const [isMouseOver, setMouseOver] = useState(false);
 
   return (
     <div
-      className={`flex justify-between w-72 h-48 bg-neutral-300 border-b-4 ${
-        isMouseOver ? "border-green-300" : "border-green-400"
+      className={`flex justify-between w-72 h-48 bg-neutral-300 border-b-4 rounded-lg ${
+        isMouseOver ? "border-black" : "border-purple-900"
       }  overflow-hidden relative ${margin}`}
       onMouseOver={() => setMouseOver(true)}
       onMouseOut={() => setMouseOver(false)}
     >
       <img
         src={img}
-        className={`${isMouseOver && "scale-110"} duration-500`}
+        className={`${isMouseOver && "scale-110"} duration-500 w-full`}
       />
 
       <div
@@ -32,9 +32,9 @@ function   ProjectCard({ img, title, margin }) {
         }`}
       >
         {isMouseOver ? (
-          <div className="bg-green-400/50 absolute bottom-0 flex items-center justify-end h-8 w-full z-20 duration-500 p-1 ">
-            <ProjectButton title="Detalhes" onMouseDown={`bg-orange-600`} background={`bg-orange-300`}  hover={`hover:bg-orange-400`}/>
-            <ProjectButton title="Visualizar" onMouseDown={`bg-green-600`} background={`bg-green-300`} hover={`hover:bg-green-400`} margin={`ml-3`}></ProjectButton>
+          <div className="bg-white/50 backdrop-blur-md absolute bottom-0 flex items-center justify-end h-8 w-full z-20 duration-500 p-1 text-white  ">
+            <ProjectButton title="Detalhes" onMouseDown={`bg-orange-600 `} background={`bg-black`}  hover={`hover:bg-orange-400 hover:text-black hover:font-bold`}/>
+            <ProjectButton title="Visualizar" onMouseDown={`bg-green-600`} background={`bg-green-300 font-bold text-black`} hover={`hover:bg-green-400`} margin={`ml-3`}></ProjectButton>
           </div>
         ) : (
           <>

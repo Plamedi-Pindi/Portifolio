@@ -18,6 +18,7 @@ export default {
 
       width: {
         "container" : "80%",
+        "container-mob" : "85%",
         "80p" : "80%"
       },
 

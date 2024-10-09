@@ -67,7 +67,7 @@ export default function ContactForm() {
 
   return (
     <form
-      className="bg-test w-container md:basis-2/5 mx-auto h-26rm rounded-md p-3 text-sm "
+      className="bg-test  w-container md:basis-2/5 mx-auto h-26rm rounded-md p-3 text-sm "
       onSubmit={emailSend}
     >
       <h2 className="text-center text-lg mb-6 mt-4 montserrat font-bold">

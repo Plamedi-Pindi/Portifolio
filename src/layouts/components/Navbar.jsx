@@ -24,7 +24,7 @@ function Navbar({ display, background, handleSoundClick }) {
   // Return
   return (
     <nav className={` ${background} ${display} md:h-14`}>
-      <div className="container  h-12 md:h-full flex justify-between items-center  md:p-0 mx-auto">
+      <div className="   w-container  h-12 md:h-full flex justify-between items-center  md:p-0 mx-auto">
         {/* Logo */}
         <Logo />
 
