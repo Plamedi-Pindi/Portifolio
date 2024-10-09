@@ -13,11 +13,27 @@ import Button from "../../../components/PortButton/Button";
 export default function Header({handleSoundClick}) {
   // states
   const [heroState, setHeroState] = useState("hero1"); // set an hero to shrink our stretch: 'hero1', 'hero2', 'hero2'
-
+  const [heroIndex, setHeroIndex] = useState(1);
   //
   let isHero1 = heroState === "hero1";
   let isHero2 = heroState === "hero2";
   let isHero3 = heroState === "hero3";
+
+  useEffect(()=>{
+    const changeHero = ()=> {
+      if (heroIndex === 3 ) {
+        setHeroIndex(1);
+        setHeroState(`hero${heroIndex}`);               
+      } else {
+        setHeroState(`hero${heroIndex}`); 
+        setHeroIndex(heroIndex + 1);
+      }
+    }
+
+    const interval = setInterval(changeHero, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleHero1Click = () => {
     setHeroState("hero2");
@@ -46,12 +62,14 @@ export default function Header({handleSoundClick}) {
     setHeroState("hero3");
   };
 
+  const nameColorArray = ['bg-gradient-to-r from-purple-600 via-pink-500 to-red-500', 'bg-gradient-to-r from-rose-600 via-violet-700 to-blue-500', 'bg-gradient-to-r from-sky-500 via-fuchsia-500 to-blue-700 ']
+
   return (
-    <header className="  w-container flex flex-col-reverse md:flex-row md:justify-between items-center mx-auto mt-2 md:mt-10 relative">
+    <header className=  {`w-container flex flex-col-reverse md:flex-row md:justify-between items-center mx-auto mt-2 md:mt-10 relative`}>
       {/*  */}
       <div className=" md:h-60vh pt-4 md:pt-10 text-center md:text-start ">
         <p className="text-lg mb-2 font-medium montserrat">Olá, eu sou</p>
-        <h1 className="text-4xl font-bold mb-2 yeseva-one-regular text-green-800 ">
+        <h1 className={`text-4xl font-bold mb-2 yeseva-one-regular bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 bg-clip-text text-transparent`} >
           {" "}
           Plamedi Pindi
         </h1>
