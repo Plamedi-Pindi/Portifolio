@@ -54,7 +54,7 @@ export default function Header({handleSoundClick}) {
       {/*  */}
       <div className=" md:h-60vh pt-4 md:pt-10 text-center md:text-start ">
         <p className="text-lg mb-2 font-medium montserrat">Olá, eu sou</p>
-        <h1 className={`text-4xl font-bold mb-2 yeseva-one-regular text-orange-300`} >
+        <h1 className={`text-4xl font-bold mb-2 yeseva-one-regular text-orange-300 AutorName`} >
           {" "}
           Plamedi Pindi
         </h1>

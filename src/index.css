@@ -48,4 +48,10 @@ body{
 }
 
 
- 
+ .AutorName {
+  text-shadow: 
+  -1px -1px 0 #fff, /* sombra superior esquerda */
+   1px -1px 0 #fff, /* sombra superior direita */
+  -1px  1px 0 #fff, /* sombra inferior esquerda */
+   1px  1px 0 #fff; /* sombra inferior direita */
+ }
