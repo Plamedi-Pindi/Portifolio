@@ -18,7 +18,7 @@ export default {
       },
       
       textColor: {
-        "secundary" : "#72BF78",
+        "secundary" : "#7AB2D3",
       },
       
       borderColor:{
