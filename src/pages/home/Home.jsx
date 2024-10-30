@@ -139,11 +139,11 @@ export default function Home() {
         <Subtitle title="Meus Projetos" margin={`mb-10`} />
 
         <div className="flex justify-between   mb-6">
-          <div className="flex justify-center items-center bg-gradient-to-r from-blue-500 via-sky-500 to-purple-800 w-32 h-10  ">
+          <div className="flex justify-center items-center bg-secundary w-32 h-10  ">
             <span className="yeseva-one-regular ">Destaques</span>
           </div>
 
-          <div className="flex items-center text-blue-600 cursor-pointer hover:text-orange-300">
+          <div className="flex items-center text-secundary cursor-pointer hover:text-orange-300">
             <span className="text-sm   ">Ver mais</span>
             <BsArrowRight className="text-xl ml-3" />
           </div>

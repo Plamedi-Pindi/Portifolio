@@ -13,7 +13,16 @@ export default {
 
       backgroundColor: {
         "default" : "#f0f0e8",
+        "secundary" : "#72BF78",
         "test" : "#d0c8b8"
+      },
+      
+      textColor: {
+        "secundary" : "#72BF78",
+      },
+      
+      borderColor:{
+        "secundary" : "#72BF78",
       },
 
       width: {

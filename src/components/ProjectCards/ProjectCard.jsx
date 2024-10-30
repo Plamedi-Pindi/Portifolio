@@ -16,7 +16,7 @@ function   ProjectCard({ img, title, margin }) {
   return (
     <div
       className={`flex justify-between w-72 h-48 bg-neutral-300 border-b-4 rounded-lg ${
-        isMouseOver ? "border-black" : "border-blue-700"
+        isMouseOver ? "border-black" : "border-secundary"
       }  overflow-hidden relative ${margin}`}
       onMouseOver={() => setMouseOver(true)}
       onMouseOut={() => setMouseOver(false)}
