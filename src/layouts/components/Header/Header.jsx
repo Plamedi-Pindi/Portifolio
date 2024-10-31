@@ -54,7 +54,7 @@ export default function Header({handleSoundClick}) {
       {/*  */}
       <div className=" md:h-60vh pt-4 md:pt-10 text-center md:text-start ">
         <p className="text-lg mb-2 font-medium montserrat">Olá, eu sou</p>
-        <h1 className={`text-4xl font-bold mb-2 yeseva-one-regular `} >
+        <h1 className={`text-4xl font-bold mb-2 yeseva-one-regular  textShadow`} >
           {" "}
           Plamedi Pindi
         </h1>
@@ -68,8 +68,9 @@ export default function Header({handleSoundClick}) {
           width={`w-48`}
           margin={`mb-4 mx-auto md:mx-0 `}
           border={`border-2 border-black`}
-          hover={`hover:scale-95 hover:bg-orange-300 hover:border-white duration-300 hover:text-black hover:font-bold`}
+          hover={`md:hover:scale-95 md:hover:bg-orange-300 hover:border-white duration-300 md:hover:text-black hover:font-bold focus:bg-orange-300`}
           font={`font-medium text-sm `}
+          shadow={'animateShadow'}
         >
           Entre em contato
         </Button>
@@ -79,14 +80,15 @@ export default function Header({handleSoundClick}) {
           font={`font-medium text-sm`}
           margin={`mx-auto  md:mx-0  `}
           border={`border-2 border-black`}
-          hover={`hover:bg-orange-300 hover:text-balck hover:border-white hover:scale-95 duration-300 hover:text-black  hover:font-bold`}
+          hover={`md:hover:bg-orange-300 md:hover:text-balck md:hover:border-white focus:border-white focus:hover:bg-orange-300 md:hover:scale-95 duration-300 md:hover:text-black  hover:font-bold`}
           onclick={handleSoundClick}
+          shadow={'animateShadow'}
         >
           Download CV
         </Button>
 
         {/* WELCOME BOX  */}
-        <div className=" hidden md:flex bg-white md:w-64 h-16 flex justify-between items-center drop-shadow mt-6 absolute  md:bottom-10 md:left-32  z-10 cursor-pointer">
+        <div className=" hidden md:flex select-none bg-white md:w-64 h-16 flex justify-between items-center drop-shadow mt-6 absolute  md:bottom-10 md:left-32  z-10 cursor-pointer">
           <div className="   ml-4 font-medium">
             <p className="text-sm">Seja bem-vindo no meu</p>
             <p className="text-sm"> cantinho da internet</p>
@@ -98,7 +100,7 @@ export default function Header({handleSoundClick}) {
         </div>
       </div>
 
-      <div className="w-full md:w-auto md:pl-2 md:pr-2 h-40vh md:h-60vh flex md:space-x-6  overflow-hidden">
+      <div className="w-full select-none md:w-auto md:pl-2 md:pr-2 h-40vh md:h-60vh flex md:space-x-6  overflow-hidden">
         {/* ================== MOBILE HERO START ================== */}
 
         {/* HERO IMG 1 */}

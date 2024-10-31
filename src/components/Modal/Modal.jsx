@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import {BsX} from 'react-icons/bs';
 
-export default function Modal({isOpen, isClosed, children}) {
+export default function Modal({isOpen, isClosed, children,}) {
     useEffect(() => {
         if (isOpen) {
             document.body.style.background = 'hidden';
@@ -19,7 +19,8 @@ export default function Modal({isOpen, isClosed, children}) {
   return (
     <div className={` w-full h-screen bg-black/50 flex items-center justify-center fixed left-0 top-0 z-20 ${isOpen ? 'block' : 'hidden' }`} >
 
-        <div className="w-[90%] h-[90%] bg-white overflow-y-scroll rounded-md pb-8 sm:w-[30rem] md:w-[45rem] md:pt-6">
+        <div className="w-[90%] h-[90%] bg-white overflow-y-scroll rounded-md pb-8 sm:w-[30rem] md:w-[45rem] pt-4 md:pt-6 lg:w-[55rem] scrollbar-hide">
+            <p className="text-lg pl-2 mb-2 md:pl-4 font-bold">Project details</p>
             {children}
         </div>
 

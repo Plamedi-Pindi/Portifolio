@@ -28,19 +28,17 @@ function ProjectCard({ img, title, margin }) {
 
   return (
     <div
-      className={`flex justify-between w-72 h-48 bg-neutral-300 border-b-4 rounded-lg ${
-        isMouseOver ? "border-black" : "border-secundary"
-      }  overflow-hidden relative ${margin}`}
+      className={`flex justify-between w-72  h-48 bg-neutral-300 border-b-4 rounded-lg overflow-hidden relative ${margin} border-secundary hover:border-black` }
       onMouseOver={() => setMouseOver(true)}
       onMouseOut={() => setMouseOver(false)}
     >
       <img
         src={img}
-        className={`${isMouseOver && "scale-110"} duration-500 w-full`}
+        className={`${isMouseOver && "scale-110"} duration-500 w-full select-none`}
       />
 
       <div
-        className={`w-full h-full  absolute flex justify-center items-center ${
+        className={`w-full h-full  absolute flex justify-center items-center select-none ${
           !isMouseOver && "bg-black/60"
         }`}
       >
@@ -76,10 +74,10 @@ function ProjectCard({ img, title, margin }) {
 
       {/* < Projects Modal /> */}
       <Modal isOpen={modal} isClosed={handleModalCloseClick}>
-        <div className=" w-full p-2">
+        <div className=" w-full p-2 md:p-4">
 
           {/* Flexed container for desktop start*/}
-          <div className=" md:flex ">
+          <div className=" md:flex md:justify-between  ">
 
             {/* Image box */}
             <div className="md:w-1/2">
@@ -87,14 +85,15 @@ function ProjectCard({ img, title, margin }) {
               <img
                 src={img}
                 alt="Project imgae"
-                className="w-full h-52 sm:h-60 "
+                className="w-full h-52 sm:h-60  rounded-md select-none "
               />
+              
 
               {/* Project name */}
-              <h2 className="text-lg font-bold mt-2">Project title</h2>
+              <h2 className="text-lg font-bold mt-3 mb-5 select-none"> {title} </h2>
 
               {/* Call button form live demo */}
-              <div className="flex items-center justify-between mt-3">
+              <div className="flex items-center justify-between mt-3 select-none">
                 <button className="h-8 w-32 rounded-md bg-black text-white text-sm p-1.5 animateShadow focus:text-zinc-400">
                   Live Demo
                 </button>
@@ -105,7 +104,8 @@ function ProjectCard({ img, title, margin }) {
               </div>
             </div>
 
-            <div>
+            {/* Detail container */}
+            <div className="md:w-80 select-none">
               {/* Languages and Frameworks Section */}
               <Section title={"Languages and Frameworks"}>
                 <ul className="text-sm text-zinc-700">
@@ -146,7 +146,7 @@ function ProjectCard({ img, title, margin }) {
           {/* Flexed container for desktop end*/}
 
           {/* Description */}
-          <Section title={"Description"}>
+          <Section title={"Description"} container={'md:mt-8 md:border-t md:pt-4'} >
             <p className="mb-2.5 text-sm text-zinc-700">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Voluptates non magnam fuga officia praesentium reprehenderit at
@@ -167,9 +167,9 @@ function ProjectCard({ img, title, margin }) {
   );
 }
 
-const Section = ({ title, children }) => {
+const Section = ({ title, children, container }) => {
   return (
-    <section className="mt-6 border-t-2 md:border-0 pt-4 md:pt-0 mt-0">
+    <section className= {`mt-6 border-t-2 md:border-0 pt-4 md:pt-0 md:mt-0 ${container}`} >
       <h3 className="text-lg font-medium mb-4"> {title} </h3>
 
       {children}

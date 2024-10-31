@@ -82,8 +82,8 @@ export default function Home() {
 
       {/* ABOUT SECTION */}
       <section className="mt-10 mb-10  md:mt-40  w-container mx-auto md:flex items-center md:h-28 ">
-        <div className="md:bg-green-400 md:flex md:justify-center md:items-center md:w-32 md:h-full cursor-pointer mb-4">
-          <h2 className="font-bold text-center text-xl md:text-3xl  md:mb-0">
+        <div className="md:bg-green-400 select-none md:flex md:justify-center md:items-center md:w-32 md:h-full cursor-pointer mb-4">
+          <h2 className=" font-bold text-center text-xl md:text-3xl  md:mb-0">
             Sobre mim.
           </h2>
         </div>
