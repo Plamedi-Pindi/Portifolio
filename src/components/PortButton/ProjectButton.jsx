@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 
-function ProjectButton({title, onMouseDown, background, margin, hover}) {
+function ProjectButton({title, onMouseDown, background, margin, hover, onClick}) {
   const [isClicked, setIsClicked] = useState(false);
 
   return (
@@ -12,6 +12,7 @@ function ProjectButton({title, onMouseDown, background, margin, hover}) {
       }`}
       onMouseDown={() => setIsClicked(true)}
       onMouseUp={() => setIsClicked(false)}
+      onClick={onClick}
     >
       {title}
     </button>

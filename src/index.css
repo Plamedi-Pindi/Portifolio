@@ -41,17 +41,41 @@
 body{
   font-family: "Roboto", sans-serif, ;
   background: #f0f0e8 ;
+  height: 100vh;
 }
 
 .backgroundBase{
   background: #f0f0e8 ;
 }
 
+.animateShadow {
+  animation-name: shadowAnimate;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  
+  transition: .5s ease-in;
+}
 
- .AutorName {
-  text-shadow: 
-  -1px -1px 0 #fff, /* sombra superior esquerda */
-   1px -1px 0 #fff, /* sombra superior direita */
-  -1px  1px 0 #fff, /* sombra inferior esquerda */
-   1px  1px 0 #fff; /* sombra inferior direita */
- }
+@keyframes shadowAnimate {
+  0% {
+    box-shadow: -2px -2px 15px rgba(231, 73, 73, 0.774);
+  }
+
+  25% {
+    box-shadow: 3px -2px 15px rgba(9, 198, 231, 0.788);
+  }
+
+  50% {
+    box-shadow: 2px 2px 15px rgba(255, 10, 181, 0.815);
+  }
+
+  75% {
+    box-shadow: -2px 2px 15px rgba(141, 3, 153, 0.788);
+  }
+
+  100% {
+    box-shadow: -2px -2px 15px rgba(47, 241, 30, 0.774);
+  }
+}
+
+ 

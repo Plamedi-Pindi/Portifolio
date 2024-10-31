@@ -53,7 +53,11 @@ import e6 from "../../assets/sound/note/e6-82016.mp3";
 // Motion
 import MotionTest from "../../components/MotionTest/MotionTest";
 
+
+//Main fundtion
 export default function Home() {
+  
+
   // Event handler for Download button sound
   const handleSoundClick = () => {
     // Howler object
@@ -66,7 +70,7 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div className="relative">
     {/* NAVBAR */}
       <Navbar
         background={`bg-white md:bg-default`}
@@ -236,15 +240,15 @@ export default function Home() {
       </section>
       {/* CONTACTS END ============== */}
 
+
+  
+
       {/* FOOTER */}
-
-      {/* <MotionTest /> */}
-
       <footer className="h-16 w-full bg-white">
         <div className="w-container mx-auto flex items-center h-full">
           <Logo />
         </div>
       </footer>
-    </>
+    </div>
   );
 }
